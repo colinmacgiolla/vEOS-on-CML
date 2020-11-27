@@ -1,0 +1,8 @@
+id: veos-4-24-0F
+node_definition_id: veos64-4.24.0F
+description: vEOS 4.24.0F
+label: vEOS 4.24.0F
+disk_image: vEOS64-lab-4.24.0F.qcow2
+read_only: false
+disk_subfolder: veos-4-24-0F
+schema_version: 0.0.1

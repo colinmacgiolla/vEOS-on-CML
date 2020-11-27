@@ -1,0 +1,64 @@
+id: veos64-4.24.0F
+general:
+  description: vEOS Switch
+  nature: switch
+  read_only: false
+device:
+  interfaces:
+    has_loopback_zero: false
+    physical:
+      - management 1
+      - Ethernet 1
+      - Ethernet2
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6
+      - Ethernet7
+      - Ethernet8
+      - Ethernet9
+      - Ethernet10
+      - Ethernet11
+      - Ethernet12
+    serial_ports: 2
+    default_count: 13
+ui:
+  visible: true
+  description: |-
+    Arista vEOS
+
+    Requires 2GB with 1vCPU
+  label_prefix: veos-4.24.0F
+  icon: switch
+  label: vEOS 4.24.0F
+sim:
+  linux_native:
+    libvirt_domain_driver: kvm
+    driver: nxosv9000
+    disk_driver: ide
+    ram: 2048
+    cpus: 1
+    nic_driver: e1000
+boot:
+  timeout: 480
+inherited:
+  image:
+    ram: true
+    cpus: true
+    data_volume: false
+    boot_disk_size: false
+  node:
+    ram: true
+    cpus: true
+    data_volume: false
+    boot_disk_size: false
+configuration:
+  generator:
+    driver: nxosv9000
+schema_version: 0.0.1
+pyats:
+  os: nxos
+  series: n9k
+  use_in_testbed: true
+  config_extract_command: show run
+  username: admin
